@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel(io="database.xlsx", sheet_name="Sheet1")
+df = pd.read_csv("Database.csv")
 
 first_places_a  = []
 second_places_a = []
@@ -16,10 +16,10 @@ for i in range(df.shape[0]):
     second_places_b.append(str(df.iloc[i][6]))
     third_places_b.append(str(df.iloc[i][7]))
 
-# Let's put all participats in the same list
+# Let's put all participats in the same list and ret rid of repetitions
 all_participants    = first_places_a + first_places_b + second_places_a + second_places_b + third_places_a + third_places_b
-unique_participants = list(set(all_participants))                               # This is to get unique names
-unique_participants = [x for x in unique_participants if x != 'nan']       # Get rid of nan
+unique_participants = list(set(all_participants))
+unique_participants = [x for x in unique_participants if x != 'nan']
 
 rating = [0]*len(unique_participants)
 
