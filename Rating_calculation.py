@@ -35,6 +35,7 @@ for i in range(len(unique_participants)):
     rating[i] = [unique_participants[i], num_of_first_places, num_of_second_places, num_of_third_places, total_num_of_wins, score]
 
 sorted_rating = sorted(rating, key=lambda column: float(column[4]), reverse=True)
+sorted_rating = sorted(sorted_rating, key=lambda column: float(column[5]), reverse=True)
 
 # Write the file
 with open("Rating_table.csv","w+") as f:
