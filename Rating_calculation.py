@@ -1,7 +1,7 @@
 import pandas as pd
 
+# Reading the database
 df = pd.read_csv("Database.csv")
-
 first_places_a  = [str(df.iloc[i][2]) for i in range(df.shape[0])]
 second_places_a = [str(df.iloc[i][3]) for i in range(df.shape[0])]
 third_places_a  = [str(df.iloc[i][4]) for i in range(df.shape[0])]
