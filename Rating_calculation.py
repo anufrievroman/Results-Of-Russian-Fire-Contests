@@ -2,19 +2,12 @@ import pandas as pd
 
 df = pd.read_csv("Database.csv")
 
-first_places_a  = []
-second_places_a = []
-third_places_a  = []
-first_places_b  = []
-second_places_b = []
-third_places_b  = []
-for i in range(df.shape[0]):
-    first_places_a.append(str(df.iloc[i][2]))
-    second_places_a.append(str(df.iloc[i][3]))
-    third_places_a.append(str(df.iloc[i][4]))
-    first_places_b.append(str(df.iloc[i][5]))
-    second_places_b.append(str(df.iloc[i][6]))
-    third_places_b.append(str(df.iloc[i][7]))
+first_places_a  = [str(df.iloc[i][2]) for i in range(df.shape[0])]
+second_places_a = [str(df.iloc[i][3]) for i in range(df.shape[0])]
+third_places_a  = [str(df.iloc[i][4]) for i in range(df.shape[0])]
+first_places_b  = [str(df.iloc[i][5]) for i in range(df.shape[0])]
+second_places_b = [str(df.iloc[i][6]) for i in range(df.shape[0])]
+third_places_b  = [str(df.iloc[i][7]) for i in range(df.shape[0])]
 
 # Let's put all participats in the same list and ret rid of repetitions
 all_participants    = first_places_a + first_places_b + second_places_a + second_places_b + third_places_a + third_places_b
