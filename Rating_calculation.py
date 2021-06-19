@@ -29,6 +29,6 @@ sorted_rating = sorted(sorted_rating, key=lambda column: float(column[4]), rever
 
 # Write the file
 with open("Rating_table.csv","w+") as f:
-    f.writelines(['Name,','1st place,','2nd place,','3rd place,','Total,','Score,','\n'])
+    f.writelines(['Name,','1st place,','2nd place,','3rd place,','Total,','Score','\n'])
     for line in sorted_rating:
         f.writelines(str(line)[1:-1]+'\n')
